@@ -1,0 +1,17 @@
+.SecondaryBall {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+
+.darkMode {
+    background-color: black; 
+}
+
+.lightMode {
+    background-color: lightblue;
+}

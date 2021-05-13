@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import PrimaryBall from './components/PrimaryBall'
+import {setDarkMode, setLightMode} from './store/action'
+import { useDispatch } from 'react-redux'
 
 function App() {
+
+  const dispach = useDispatch();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="info-wrapper">
+        <h1>Esercizio 1</h1>
+        <strong> Premi un pulsante per cambiare tema: </strong>
+        <div className="button-container">
+          <button type="button" id="darkBtn" onClick={()=>dispach(setDarkMode())}>Dark Mode</button>
+          <button type="button" id="lightBtn" onClick={()=>dispach(setLightMode())}>Light Mode</button>
+        </div>
+      </div>
+      <div className="ball-container">
+        <PrimaryBall />
+      </div>
     </div>
   );
 }
